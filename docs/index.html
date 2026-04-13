@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodLogistic</title>
+
+    <style>
+        :root {
+            --primary-color: #1f3c2f;
+            --secondary-color: #d4af37;
+            --light-color: #f8f8f8;
+            --dark-color: #222;
+            --font-main: 'Segoe UI', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+        }
+
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .hero {
+            height: 80vh;
+            background: url('https://picsum.photos/1600/900?food,logistics') no-repeat center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            background: rgba(0,0,0,0.5);
+            padding: 1rem;
+        }
+
+        section {
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .services {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input, textarea {
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        button {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: var(--secondary-color);
+            color: black;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--dark-color);
+            color: white;
+        }
+
+        @media (min-width: 768px) {
+            .services {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <h1>FoodLogistic</h1>
+        <ul>
+            <li><a href="#inici">Inici</a></li>
+            <li><a href="#serveis">Serveis</a></li>
+            <li><a href="#sobre">Sobre nosaltres</a></li>
+            <li><a href="#contacte">Contacte</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section id="inici" class="hero">
+        <h1>Solucions logístiques per al sector alimentari</h1>
+    </section>
+
+    <section id="serveis">
+        <h2>Els nostres serveis</h2>
+        <div class="services">
+            <div class="card">
+                <h3>Transport refrigerat</h3>
+                <p>Garantim la cadena de fred amb tecnologia avançada.</p>
+            </div>
+            <div class="card">
+                <h3>Distribució eficient</h3>
+                <p>Optimització de rutes per reduir costos i temps.</p>
+            </div>
+            <div class="card">
+                <h3>Magatzematge</h3>
+                <p>Instal·lacions adaptades per a productes alimentaris.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <h2>Sobre nosaltres</h2>
+        <p>
+            FoodLogistic és una empresa especialitzada en logística alimentària, oferint solucions innovadores i eficients per al transport i distribució de productes frescos i congelats. Amb anys d'experiència, treballem per garantir la màxima qualitat i seguretat en cada enviament.
+        </p>
+    </section>
+
+    <section id="contacte">
+        <h2>Contacte</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Nom" required>
+            <input type="email" id="email" placeholder="Correu electrònic" required>
+            <input type="tel" id="phone" placeholder="Telèfon de contacte" required>
+            <textarea id="message" rows="5" placeholder="Missatge" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="formMessage"></p>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 FoodLogistic - Tots els drets reservats</p>
+</footer>
+
+<script>
+    // Validació bàsica del formulari
+    const form = document.getElementById('contactForm');
+    const message = document.getElementById('formMessage');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const text = document.getElementById('message').value.trim();
+
+        if (!name || !email || !phone || !text) {
+            message.textContent = "Si us plau, omple tots els camps.";
+            message.style.color = "red";
+            return;
+        }
+
+        // Simulació d'enviament
+        message.textContent = "Missatge enviat correctament!";
+        message.style.color = "green";
+
+        form.reset();
+    });
+</script>
+
+</body>
+</html>

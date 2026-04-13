@@ -5,7 +5,7 @@ Aquesta és la web corporativa de FoodLogistic, una empresa fictícia dedicada a
 
 ## Demostració
 
-[🌐 URL de la web](https://[usuari].github.io/[nom-del-repositori])
+[🌐 URL de la web](https://pol-fp.github.io/demo-web/)
 
 ## Tecnologies Utilitzades
 

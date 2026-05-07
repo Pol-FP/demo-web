@@ -33,6 +33,7 @@
             padding: 1rem 2rem;
             position: sticky;
             top: 0;
+            z-index: 1000;
         }
 
         nav {
@@ -110,7 +111,7 @@
         }
 
         label {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
         button {
@@ -119,6 +120,7 @@
             padding: 0.8rem;
             border: none;
             cursor: pointer;
+            border-radius: 4px;
         }
 
         button:hover {
@@ -139,14 +141,37 @@
             margin: 0 5px;
         }
 
+        /* Cookies */
+
         #cookieBanner {
             position: fixed;
             bottom: 0;
             width: 100%;
             background: #222;
             color: white;
-            padding: 1rem;
-            text-align: center;
+            padding: 1.5rem;
+            z-index: 2000;
+        }
+
+        .cookie-options {
+            margin: 1rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .legal-box {
+            background: white;
+            padding: 2rem;
+            margin-top: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         @media (min-width: 768px) {
@@ -171,6 +196,9 @@
             <li><a href="#serveis">Serveis</a></li>
             <li><a href="#sobre">Sobre nosaltres</a></li>
             <li><a href="#contacte">Contacte</a></li>
+            <li><a href="#avislegal">Avís legal</a></li>
+            <li><a href="#privacitat">Privacitat</a></li>
+            <li><a href="#cookies">Cookies</a></li>
         </ul>
     </nav>
 </header>
@@ -183,15 +211,18 @@
 
 <section id="serveis">
     <h2>Els nostres serveis</h2>
+
     <div class="services">
         <div class="card">
             <h3>Transport refrigerat</h3>
             <p>Garantim la cadena de fred amb tecnologia avançada.</p>
         </div>
+
         <div class="card">
             <h3>Distribució eficient</h3>
             <p>Optimització de rutes per reduir costos i temps.</p>
         </div>
+
         <div class="card">
             <h3>Magatzematge</h3>
             <p>Instal·lacions adaptades per a productes alimentaris.</p>
@@ -201,13 +232,19 @@
 
 <section id="sobre">
     <h2>Sobre nosaltres</h2>
+
     <p>
-        FoodLogistic és una empresa especialitzada en logística alimentària.
+        FoodLogistic és una empresa especialitzada en logística alimentària
+        dedicada al transport, emmagatzematge i distribució de productes
+        alimentaris a Catalunya.
     </p>
 </section>
 
+<!-- FORMULARI ADAPTAT RGPD -->
+
 <section id="contacte">
     <h2>Contacte</h2>
+
     <form id="contactForm">
 
         <label for="name">Nom</label>
@@ -224,42 +261,213 @@
 
         <label>
             <input type="checkbox" id="privacy" required>
-            Accepto la <a href="privacitat.html" target="_blank">Política de Privacitat</a>
+
+            He llegit i accepto la
+            <a href="#privacitat">
+                Política de Privacitat
+            </a>
         </label>
 
         <label>
             <input type="checkbox" id="marketing">
-            Accepto rebre comunicacions comercials (<a href="avis-legal.html" target="_blank">Avís Legal</a>)
+
+            Autoritzo l'enviament de comunicacions comercials.
         </label>
 
         <button type="submit">Enviar</button>
+
     </form>
+
     <p id="formMessage"></p>
+</section>
+
+<!-- AVÍS LEGAL -->
+
+<section id="avislegal">
+    <h2>Avís Legal</h2>
+
+    <div class="legal-box">
+
+        <p><strong>Titular del web:</strong> FoodLogistic S.L.</p>
+
+        <p><strong>NIF:</strong> B12345678</p>
+
+        <p><strong>Adreça:</strong> Carrer Exemple 25, 08500 Vic, Catalunya</p>
+
+        <p><strong>Correu electrònic:</strong> info@foodlogistic.cat</p>
+
+        <p><strong>Telèfon:</strong> 938 000 000</p>
+
+        <p>
+            Aquest lloc web té com a finalitat informar sobre els serveis
+            de logística alimentària de FoodLogistic.
+        </p>
+
+        <p>
+            L'usuari es compromet a fer un ús adequat dels continguts del web
+            i a no utilitzar-los per a activitats il·legals.
+        </p>
+
+        <p>
+            Tots els continguts del web, incloent textos, imatges i logotips,
+            són propietat de FoodLogistic o disposen de llicència d'ús.
+        </p>
+
+    </div>
+</section>
+
+<!-- POLÍTICA DE PRIVACITAT -->
+
+<section id="privacitat">
+    <h2>Política de Privacitat</h2>
+
+    <div class="legal-box">
+
+        <p>
+            D'acord amb el Reglament General de Protecció de Dades (RGPD),
+            informem que les dades personals facilitades seran tractades per
+            FoodLogistic S.L.
+        </p>
+
+        <p>
+            <strong>Finalitat:</strong> gestionar les consultes enviades
+            mitjançant el formulari de contacte.
+        </p>
+
+        <p>
+            <strong>Legitimació:</strong> consentiment de l'usuari.
+        </p>
+
+        <p>
+            <strong>Conservació:</strong> les dades es conservaran mentre
+            siguin necessàries per gestionar la consulta.
+        </p>
+
+        <p>
+            <strong>Destinataris:</strong> no es cediran dades a tercers,
+            excepte obligació legal.
+        </p>
+
+        <p>
+            <strong>Drets de l'usuari:</strong>
+            podeu exercir els drets d'accés, rectificació,
+            supressió, oposició, limitació i portabilitat
+            enviant una sol·licitud a:
+            info@foodlogistic.cat
+        </p>
+
+        <p>
+            També teniu dret a presentar una reclamació davant
+            l'Autoritat Catalana de Protecció de Dades.
+        </p>
+
+    </div>
+</section>
+
+<!-- POLÍTICA DE COOKIES -->
+
+<section id="cookies">
+    <h2>Política de Cookies</h2>
+
+    <div class="legal-box">
+
+        <p>
+            Aquest lloc web utilitza cookies pròpies per garantir
+            el correcte funcionament de la pàgina.
+        </p>
+
+        <h3>Tipus de cookies utilitzades</h3>
+
+        <ul>
+            <li>
+                <strong>Cookies tècniques:</strong>
+                necessàries per al funcionament del web.
+            </li>
+
+            <li>
+                <strong>Cookies d'anàlisi:</strong>
+                permeten analitzar el comportament dels usuaris.
+            </li>
+
+            <li>
+                <strong>Cookies de màrqueting:</strong>
+                utilitzades per mostrar publicitat personalitzada.
+            </li>
+        </ul>
+
+        <p>
+            L'usuari pot acceptar, rebutjar o configurar les cookies
+            des del banner inicial.
+        </p>
+
+    </div>
 </section>
 
 </main>
 
 <footer>
+
     <p>&copy; 2026 FoodLogistic - Tots els drets reservats</p>
+
     <p>
-        <a href="avis-legal.html">Avís Legal</a> |
-        <a href="privacitat.html">Política de Privacitat</a> |
-        <a href="cookies.html">Política de Cookies</a>
+        <a href="#avislegal">Avís Legal</a> |
+        <a href="#privacitat">Política de Privacitat</a> |
+        <a href="#cookies">Política de Cookies</a>
     </p>
+
 </footer>
 
-<!-- Banner de cookies -->
+<!-- BANNER DE COOKIES COMPLET -->
+
 <div id="cookieBanner">
-    Aquest lloc web utilitza cookies.
-    <button onclick="acceptCookies()">Acceptar</button>
-    <button onclick="rejectCookies()">Rebutjar</button>
+
+    <h3>Configuració de cookies</h3>
+
+    <p>
+        Utilitzem cookies per millorar l'experiència de navegació.
+        Podeu acceptar, rebutjar o configurar les cookies.
+    </p>
+
+    <div class="cookie-options">
+
+        <label>
+            <input type="checkbox" checked disabled>
+            Cookies tècniques (obligatòries)
+        </label>
+
+        <label>
+            <input type="checkbox" id="analyticsCookies">
+            Cookies d'anàlisi
+        </label>
+
+        <label>
+            <input type="checkbox" id="marketingCookies">
+            Cookies de màrqueting
+        </label>
+
+    </div>
+
+    <div class="cookie-buttons">
+
+        <button onclick="acceptCookies()">
+            Acceptar seleccionades
+        </button>
+
+        <button onclick="rejectCookies()">
+            Rebutjar opcionals
+        </button>
+
+    </div>
+
 </div>
 
 <script>
+
 const form = document.getElementById('contactForm');
 const message = document.getElementById('formMessage');
 
 form.addEventListener('submit', function(e) {
+
     e.preventDefault();
 
     const name = document.getElementById('name').value.trim();
@@ -269,39 +477,84 @@ form.addEventListener('submit', function(e) {
     const privacy = document.getElementById('privacy');
 
     if (!name || !email || !phone || !text) {
+
         message.textContent = "Omple tots els camps.";
         message.style.color = "red";
         return;
     }
 
     if (!privacy.checked) {
-        message.textContent = "Has d'acceptar la política de privacitat.";
+
+        message.textContent =
+            "Has d'acceptar la política de privacitat.";
+
         message.style.color = "red";
         return;
     }
 
-    message.textContent = "Missatge enviat correctament!";
+    message.textContent =
+        "Missatge enviat correctament!";
+
     message.style.color = "green";
 
     form.reset();
 });
 
-// Cookies
+
+// COOKIES
+
 function acceptCookies() {
-    localStorage.setItem("cookiesAccepted", "true");
+
+    const analytics =
+        document.getElementById("analyticsCookies").checked;
+
+    const marketing =
+        document.getElementById("marketingCookies").checked;
+
+    const cookiePreferences = {
+
+        technical: true,
+        analytics: analytics,
+        marketing: marketing
+    };
+
+    localStorage.setItem(
+        "cookiePreferences",
+        JSON.stringify(cookiePreferences)
+    );
+
     document.getElementById("cookieBanner").style.display = "none";
 }
 
 function rejectCookies() {
-    localStorage.setItem("cookiesAccepted", "false");
+
+    const cookiePreferences = {
+
+        technical: true,
+        analytics: false,
+        marketing: false
+    };
+
+    localStorage.setItem(
+        "cookiePreferences",
+        JSON.stringify(cookiePreferences)
+    );
+
     document.getElementById("cookieBanner").style.display = "none";
 }
 
 window.onload = function() {
-    if (localStorage.getItem("cookiesAccepted")) {
-        document.getElementById("cookieBanner").style.display = "none";
+
+    const savedCookies =
+        localStorage.getItem("cookiePreferences");
+
+    if (savedCookies) {
+
+        document.getElementById("cookieBanner").style.display =
+            "none";
     }
-}
+};
+
 </script>
 
 </body>
